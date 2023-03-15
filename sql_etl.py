@@ -35,12 +35,11 @@ def connect():
             print('Database connection closed.')
 
 
-def create_table():
+def create_table(table_name,col_list):
     conn = None
     try:
-
         # create statement
-        #create_sql = 'CREATE TABLE ' + table_name + '(' + ','.join(my_reader.fieldnames) + ')'
+        create_sql = 'CREATE TABLE '+ table_name + ' (' + ', '.join(col_list) + ');'
         # read database configuration
         params = config()
         # connect to the PostgreSQL database
@@ -48,16 +47,9 @@ def create_table():
         # create a new cursor
         cur = conn.cursor()
         # execute the INSERT statement
-        cur.execute("""
-        CREATE TABLE customer2(
-        customer_id INT PRIMARY KEY NOT NULL,
-        name CHAR(50) NOT NULL,
-        address CHAR(100),
-        email CHAR(50),
-        phone_number CHAR(20));
-        """)
-        print('Table created in PostgreSQL')
-
+        cur.execute(create_sql)
+        print(create_sql)
+        print('Table '+ table_name + ' created in PostgreSQL')
         conn.commit()
         # close communication with the database
         cur.close()
