@@ -1,3 +1,8 @@
+'''
+This is the librariry for adding Python-SQL functions
+
+'''
+
 import psycopg2
 from config import config
 
