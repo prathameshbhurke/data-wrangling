@@ -1,6 +1,7 @@
 '''
 This is the librariry for adding Python-SQL functions
-
+1. Connect: connect to postgresql
+2. create_table
 '''
 
 import psycopg2
