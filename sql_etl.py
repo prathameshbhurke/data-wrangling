@@ -74,9 +74,9 @@ def excel_import(csv_path,schema_name,table_name):
         engine = create_engine('postgresql+psycopg2://postgres:may01@localhost:5432/testproject')
         conn = engine.raw_connection()
         cur = conn.cursor()
-        df.to_sql(name= table_name,schema=schema_name, con= engine)
-        create_sql = 'select * from '+ table_name+ ' ;'
-        cur.execute(create_sql)
+        df.to_sql(name= table_name,schema=schema_name, con= engine, index = False)
+        #create_sql = 'select count(*) from '+ table_name+ ' ;'
+        #cur.execute(create_sql)
         conn.commit()
         cur.close()
         conn.close()

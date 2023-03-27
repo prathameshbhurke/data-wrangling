@@ -20,10 +20,10 @@ class data_ingestion():
             print('invalid data')
 
     def import_csv_pandas():
-        csv_path = '/Users/reshmabanaganapalli/Documents/Python_projects/dota/ability_ids.csv'
+        csv_path = '/Users/reshmabanaganapalli/Documents/Python_projects/dota/test_player.csv'
         abilities = pd.read_csv(csv_path)
         schema_name = 'dota'
-        excel_import(csv_path, schema_name,'ability_ids')
+        excel_import(csv_path, schema_name,'test_player')
 
 if __name__ == '__main__':
     #data_ingestion.createtable()
