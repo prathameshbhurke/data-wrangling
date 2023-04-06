@@ -21,7 +21,6 @@ class data_ingestion():
 
     def import_csv_pandas():
         csv_path = '/Users/reshmabanaganapalli/Documents/Python_projects/dota/test_player.csv'
-        abilities = pd.read_csv(csv_path)
         schema_name = 'dota'
         excel_import(csv_path, schema_name,'test_player')
 
